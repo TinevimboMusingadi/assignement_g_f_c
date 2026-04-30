@@ -10,6 +10,7 @@ namespace Assignment.Forms
         public QuestionDForm()
         {
             InitializeComponent();
+            StyleConfig.ApplyFormStyle(this);
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)

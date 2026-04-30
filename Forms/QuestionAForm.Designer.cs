@@ -26,45 +26,54 @@ namespace Assignment.Forms
             this.btnProcess = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.lvResults = new System.Windows.Forms.ListView();
+            this.lblInstructions = new System.Windows.Forms.Label();
             this.SuspendLayout();
 
-            // TextBoxes (Simplified positioning for brevity)
-            int startY = 20;
+            // lblInstructions
+            this.lblInstructions.AutoSize = true;
+            this.lblInstructions.Location = new System.Drawing.Point(20, 15);
+            this.lblInstructions.Text = "Enter 8 integers below:";
+            StyleConfig.ApplyLabelStyle(this.lblInstructions, true);
+
+            // TextBoxes in a loop
             System.Windows.Forms.TextBox[] boxes = { txtNum1, txtNum2, txtNum3, txtNum4, txtNum5, txtNum6, txtNum7, txtNum8 };
             for (int i = 0; i < 8; i++)
             {
-                boxes[i].Location = new System.Drawing.Point(20, startY + (i * 30));
-                boxes[i].Size = new System.Drawing.Size(100, 23);
+                boxes[i].Location = new System.Drawing.Point(20, 50 + (i * 35));
+                boxes[i].Size = new System.Drawing.Size(120, 23);
                 this.Controls.Add(boxes[i]);
             }
 
             // btnProcess
-            this.btnProcess.Location = new System.Drawing.Point(140, 20);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(100, 30);
-            this.btnProcess.Text = "Process";
-            this.btnProcess.UseVisualStyleBackColor = true;
+            this.btnProcess.Location = new System.Drawing.Point(160, 50);
+            this.btnProcess.Size = new System.Drawing.Size(120, 40);
+            this.btnProcess.Text = "Process Data";
+            StyleConfig.ApplyButtonStyle(this.btnProcess);
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
 
             // lblResult
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(140, 70);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(38, 15);
-            this.lblResult.Text = "Results will appear here";
+            this.lblResult.Location = new System.Drawing.Point(160, 105);
+            this.lblResult.Size = new System.Drawing.Size(150, 15);
+            this.lblResult.Text = "Results: Pending input...";
+            StyleConfig.ApplyLabelStyle(this.lblResult);
 
             // lvResults
-            this.lvResults.Location = new System.Drawing.Point(140, 100);
+            this.lvResults.FullRowSelect = true;
+            this.lvResults.GridLines = true;
+            this.lvResults.Location = new System.Drawing.Point(160, 130);
             this.lvResults.Name = "lvResults";
-            this.lvResults.Size = new System.Drawing.Size(300, 150);
+            this.lvResults.Size = new System.Drawing.Size(300, 200);
 
             // QuestionAForm
-            this.ClientSize = new System.Drawing.Size(480, 300);
+            this.ClientSize = new System.Drawing.Size(500, 360);
+            this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lvResults);
             this.Name = "QuestionAForm";
-            this.Text = "Question A - Arrays & File I/O";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Question A - Arrays & Files";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -80,5 +89,6 @@ namespace Assignment.Forms
         private System.Windows.Forms.Button btnProcess;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.ListView lvResults;
+        private System.Windows.Forms.Label lblInstructions;
     }
 }

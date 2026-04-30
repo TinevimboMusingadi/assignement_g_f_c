@@ -5,11 +5,12 @@ namespace Assignment.Forms
         public QuestionAForm()
         {
             InitializeComponent();
+            StyleConfig.ApplyFormStyle(this);
 
             // Setup ListView columns
             lvResults.View = View.Details;
             lvResults.Columns.Add("Index", 80);
-            lvResults.Columns.Add("Value", 80);
+            lvResults.Columns.Add("Value", 120);
         }
 
         private void btnProcess_Click(object sender, EventArgs e)

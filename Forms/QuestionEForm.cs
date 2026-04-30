@@ -11,6 +11,7 @@ namespace Assignment.Forms
         public QuestionEForm()
         {
             InitializeComponent();
+            StyleConfig.ApplyFormStyle(this);
         }
 
         private void btnCreate_Click(object sender, EventArgs e)

@@ -18,5 +18,10 @@ namespace Assignment
         private void btnQuestionE_Click(object sender, EventArgs e) => new QuestionEForm().Show();
         private void btnQuestionF_Click(object sender, EventArgs e) => new QuestionFForm().Show();
         private void btnQuestionG_Click(object sender, EventArgs e) => new QuestionGForm().Show();
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

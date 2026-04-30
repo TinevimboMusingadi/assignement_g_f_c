@@ -5,6 +5,7 @@ namespace Assignment.Forms
         public QuestionBForm()
         {
             InitializeComponent();
+            StyleConfig.ApplyFormStyle(this);
         }
 
         private void btnRun_Click(object sender, EventArgs e)

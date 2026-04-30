@@ -25,54 +25,71 @@ namespace Assignment.Forms
             this.lblBalance = new System.Windows.Forms.Label();
             this.lstTransactions = new System.Windows.Forms.ListBox();
             this.lblTransHeader = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
 
+            // lblTitle
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(20, 15);
+            this.lblTitle.Text = "Banking System - Account Operations";
+            StyleConfig.ApplyLabelStyle(this.lblTitle, true);
+
             // lblOwner, txtOwner
-            this.lblOwner.Location = new System.Drawing.Point(20, 20);
-            this.lblOwner.Text = "Account Owner:";
-            this.txtOwner.Location = new System.Drawing.Point(130, 20);
-            this.txtOwner.Size = new System.Drawing.Size(150, 23);
+            this.lblOwner.Location = new System.Drawing.Point(20, 50);
+            this.lblOwner.Text = "Account Holder:";
+            StyleConfig.ApplyLabelStyle(this.lblOwner);
+            this.txtOwner.Location = new System.Drawing.Point(140, 50);
+            this.txtOwner.Size = new System.Drawing.Size(180, 23);
 
             // lblAmount, txtAmount
-            this.lblAmount.Location = new System.Drawing.Point(20, 50);
-            this.lblAmount.Text = "Amount:";
-            this.txtAmount.Location = new System.Drawing.Point(130, 50);
-            this.txtAmount.Size = new System.Drawing.Size(150, 23);
+            this.lblAmount.Location = new System.Drawing.Point(20, 85);
+            this.lblAmount.Text = "Amount ($):";
+            StyleConfig.ApplyLabelStyle(this.lblAmount);
+            this.txtAmount.Location = new System.Drawing.Point(140, 85);
+            this.txtAmount.Size = new System.Drawing.Size(180, 23);
 
-            // btnCreate
-            this.btnCreate.Location = new System.Drawing.Point(20, 90);
-            this.btnCreate.Size = new System.Drawing.Size(100, 30);
-            this.btnCreate.Text = "Create Account";
+            // Action Buttons
+            this.btnCreate.Location = new System.Drawing.Point(20, 125);
+            this.btnCreate.Size = new System.Drawing.Size(140, 40);
+            this.btnCreate.Text = "Open Account";
+            StyleConfig.ApplyButtonStyle(this.btnCreate);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
 
-            // btnDeposit
             this.btnDeposit.Enabled = false;
-            this.btnDeposit.Location = new System.Drawing.Point(130, 90);
-            this.btnDeposit.Size = new System.Drawing.Size(75, 30);
+            this.btnDeposit.Location = new System.Drawing.Point(170, 125);
+            this.btnDeposit.Size = new System.Drawing.Size(70, 40);
             this.btnDeposit.Text = "Deposit";
+            StyleConfig.ApplyButtonStyle(this.btnDeposit);
             this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
 
-            // btnWithdraw
             this.btnWithdraw.Enabled = false;
-            this.btnWithdraw.Location = new System.Drawing.Point(210, 90);
-            this.btnWithdraw.Size = new System.Drawing.Size(75, 30);
+            this.btnWithdraw.Location = new System.Drawing.Point(250, 125);
+            this.btnWithdraw.Size = new System.Drawing.Size(70, 40);
             this.btnWithdraw.Text = "Withdraw";
+            StyleConfig.ApplyButtonStyle(this.btnWithdraw);
             this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
 
             // lblBalance
-            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblBalance.Location = new System.Drawing.Point(20, 130);
-            this.lblBalance.Size = new System.Drawing.Size(260, 30);
+            this.lblBalance.BackColor = System.Drawing.Color.FromArgb(16, 24, 48);
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(0, 255, 128);
+            this.lblBalance.Location = new System.Drawing.Point(20, 180);
+            this.lblBalance.Size = new System.Drawing.Size(300, 50);
             this.lblBalance.Text = "Balance: $0.00";
+            this.lblBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             // lstTransactions
-            this.lblTransHeader.Location = new System.Drawing.Point(300, 20);
-            this.lblTransHeader.Text = "Transaction History:";
-            this.lstTransactions.Location = new System.Drawing.Point(300, 40);
-            this.lstTransactions.Size = new System.Drawing.Size(350, 120);
+            this.lblTransHeader.Location = new System.Drawing.Point(340, 50);
+            this.lblTransHeader.Text = "Recent Transactions:";
+            StyleConfig.ApplyLabelStyle(this.lblTransHeader, true);
+            this.lstTransactions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstTransactions.Font = new System.Drawing.Font("Consolas", 9F);
+            this.lstTransactions.Location = new System.Drawing.Point(340, 80);
+            this.lstTransactions.Size = new System.Drawing.Size(340, 150);
 
             // QuestionEForm
-            this.ClientSize = new System.Drawing.Size(680, 180);
+            this.ClientSize = new System.Drawing.Size(700, 260);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblOwner);
             this.Controls.Add(this.txtOwner);
             this.Controls.Add(this.lblAmount);
@@ -84,7 +101,8 @@ namespace Assignment.Forms
             this.Controls.Add(this.lblTransHeader);
             this.Controls.Add(this.lstTransactions);
             this.Name = "QuestionEForm";
-            this.Text = "Question E - Bank Account Management";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Question E - Bank Account";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -99,5 +117,6 @@ namespace Assignment.Forms
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.ListBox lstTransactions;
         private System.Windows.Forms.Label lblTransHeader;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

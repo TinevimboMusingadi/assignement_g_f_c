@@ -8,6 +8,7 @@ namespace Assignment.Forms
         public QuestionFForm()
         {
             InitializeComponent();
+            StyleConfig.ApplyFormStyle(this);
         }
 
         // ---- Power method using iterative multiplication ----

@@ -9,6 +9,7 @@ namespace Assignment.Forms
         public QuestionGForm()
         {
             InitializeComponent();
+            StyleConfig.ApplyFormStyle(this);
             PopulateCheckedListBox();
             SetupTreeView();
         }

@@ -14,6 +14,7 @@ namespace Assignment.Forms
         public QuestionCForm()
         {
             InitializeComponent();
+            StyleConfig.ApplyFormStyle(this);
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

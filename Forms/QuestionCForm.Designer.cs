@@ -28,74 +28,89 @@ namespace Assignment.Forms
             this.btnLinq = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnLinqAdvantages = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
 
+            // lblTitle
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(20, 15);
+            this.lblTitle.Text = "Product Inventory Management (SQL & LINQ)";
+            StyleConfig.ApplyLabelStyle(this.lblTitle, true);
+
             // dataGridView1
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 50);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(500, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(520, 180);
 
             // lblName, txtName
-            this.lblName.Location = new System.Drawing.Point(20, 240);
-            this.lblName.Size = new System.Drawing.Size(100, 20);
+            this.lblName.Location = new System.Drawing.Point(20, 250);
+            this.lblName.Size = new System.Drawing.Size(120, 20);
             this.lblName.Text = "Product Name:";
-            this.txtName.Location = new System.Drawing.Point(130, 240);
+            StyleConfig.ApplyLabelStyle(this.lblName);
+            this.txtName.Location = new System.Drawing.Point(140, 250);
             this.txtName.Size = new System.Drawing.Size(150, 23);
 
             // lblPrice, txtPrice
-            this.lblPrice.Location = new System.Drawing.Point(20, 270);
-            this.lblPrice.Size = new System.Drawing.Size(100, 20);
-            this.lblPrice.Text = "Price:";
-            this.txtPrice.Location = new System.Drawing.Point(130, 270);
+            this.lblPrice.Location = new System.Drawing.Point(20, 280);
+            this.lblPrice.Size = new System.Drawing.Size(120, 20);
+            this.lblPrice.Text = "Price ($):";
+            StyleConfig.ApplyLabelStyle(this.lblPrice);
+            this.txtPrice.Location = new System.Drawing.Point(140, 280);
             this.txtPrice.Size = new System.Drawing.Size(150, 23);
 
             // lblStock, txtStock
-            this.lblStock.Location = new System.Drawing.Point(20, 300);
-            this.lblStock.Size = new System.Drawing.Size(100, 20);
-            this.lblStock.Text = "Stock:";
-            this.txtStock.Location = new System.Drawing.Point(130, 300);
+            this.lblStock.Location = new System.Drawing.Point(20, 310);
+            this.lblStock.Size = new System.Drawing.Size(120, 20);
+            this.lblStock.Text = "Stock Level:";
+            StyleConfig.ApplyLabelStyle(this.lblStock);
+            this.txtStock.Location = new System.Drawing.Point(140, 310);
             this.txtStock.Size = new System.Drawing.Size(150, 23);
 
-            // btnInsert
-            this.btnInsert.Location = new System.Drawing.Point(300, 240);
-            this.btnInsert.Size = new System.Drawing.Size(100, 30);
-            this.btnInsert.Text = "Insert";
+            // Action Buttons
+            this.btnInsert.Location = new System.Drawing.Point(310, 250);
+            this.btnInsert.Size = new System.Drawing.Size(110, 35);
+            this.btnInsert.Text = "Add Product";
+            StyleConfig.ApplyButtonStyle(this.btnInsert);
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 
-            // btnUpdate
-            this.btnUpdate.Location = new System.Drawing.Point(410, 240);
-            this.btnUpdate.Size = new System.Drawing.Size(100, 30);
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Location = new System.Drawing.Point(430, 250);
+            this.btnUpdate.Size = new System.Drawing.Size(110, 35);
+            this.btnUpdate.Text = "Update Price";
+            StyleConfig.ApplyButtonStyle(this.btnUpdate);
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 
-            // btnDelete
-            this.btnDelete.Location = new System.Drawing.Point(300, 280);
-            this.btnDelete.Size = new System.Drawing.Size(100, 30);
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Location = new System.Drawing.Point(310, 300);
+            this.btnDelete.Size = new System.Drawing.Size(110, 35);
+            this.btnDelete.Text = "Remove";
+            StyleConfig.ApplyButtonStyle(this.btnDelete, false);
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 
-            // btnLinq
-            this.btnLinq.Location = new System.Drawing.Point(410, 280);
-            this.btnLinq.Size = new System.Drawing.Size(100, 30);
-            this.btnLinq.Text = "LINQ (>100)";
+            this.btnLinq.Location = new System.Drawing.Point(430, 300);
+            this.btnLinq.Size = new System.Drawing.Size(110, 35);
+            this.btnLinq.Text = "LINQ Analyze";
+            StyleConfig.ApplyButtonStyle(this.btnLinq);
             this.btnLinq.Click += new System.EventHandler(this.btnLinq_Click);
 
-            // btnLoad
-            this.btnLoad.Location = new System.Drawing.Point(530, 20);
-            this.btnLoad.Size = new System.Drawing.Size(100, 30);
-            this.btnLoad.Text = "Load All";
+            // Sidebar Buttons
+            this.btnLoad.Location = new System.Drawing.Point(550, 50);
+            this.btnLoad.Size = new System.Drawing.Size(120, 40);
+            this.btnLoad.Text = "Refresh Data";
+            StyleConfig.ApplyButtonStyle(this.btnLoad);
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
 
-            // btnLinqAdvantages
-            this.btnLinqAdvantages.Location = new System.Drawing.Point(530, 60);
-            this.btnLinqAdvantages.Size = new System.Drawing.Size(100, 50);
-            this.btnLinqAdvantages.Text = "LINQ Advantages";
+            this.btnLinqAdvantages.Location = new System.Drawing.Point(550, 100);
+            this.btnLinqAdvantages.Size = new System.Drawing.Size(120, 50);
+            this.btnLinqAdvantages.Text = "Why LINQ?";
+            StyleConfig.ApplyButtonStyle(this.btnLinqAdvantages, false);
             this.btnLinqAdvantages.Click += new System.EventHandler(this.btnLinqAdvantages_Click);
 
             // QuestionCForm
-            this.ClientSize = new System.Drawing.Size(650, 350);
+            this.ClientSize = new System.Drawing.Size(690, 360);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtName);
@@ -110,7 +125,8 @@ namespace Assignment.Forms
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnLinqAdvantages);
             this.Name = "QuestionCForm";
-            this.Text = "Question C - SQL & LINQ";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Question C - Database Operations";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,5 +145,6 @@ namespace Assignment.Forms
         private System.Windows.Forms.Button btnLinq;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnLinqAdvantages;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

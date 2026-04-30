@@ -26,50 +26,67 @@ namespace Assignment.Forms
             this.lstPassedStudents = new System.Windows.Forms.ListBox();
             this.lblPassedHeader = new System.Windows.Forms.Label();
             this.btnWhyException = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
 
+            // lblTitle
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(20, 15);
+            this.lblTitle.Text = "Student Performance Analysis";
+            StyleConfig.ApplyLabelStyle(this.lblTitle, true);
+
             // Labels and TextBoxes
-            this.lblStudentName.Location = new System.Drawing.Point(20, 20);
+            this.lblStudentName.Location = new System.Drawing.Point(20, 50);
             this.lblStudentName.Text = "Student Name:";
-            this.txtStudentName.Location = new System.Drawing.Point(130, 20);
+            StyleConfig.ApplyLabelStyle(this.lblStudentName);
+            this.txtStudentName.Location = new System.Drawing.Point(140, 50);
             this.txtStudentName.Size = new System.Drawing.Size(150, 23);
 
-            this.lblTest1.Location = new System.Drawing.Point(20, 50);
-            this.lblTest1.Text = "Test 1 Mark:";
-            this.txtTest1.Location = new System.Drawing.Point(130, 50);
+            this.lblTest1.Location = new System.Drawing.Point(20, 85);
+            this.lblTest1.Text = "Test 1 Score:";
+            StyleConfig.ApplyLabelStyle(this.lblTest1);
+            this.txtTest1.Location = new System.Drawing.Point(140, 85);
             this.txtTest1.Size = new System.Drawing.Size(150, 23);
 
-            this.lblTest2.Location = new System.Drawing.Point(20, 80);
-            this.lblTest2.Text = "Test 2 Mark:";
-            this.txtTest2.Location = new System.Drawing.Point(130, 80);
+            this.lblTest2.Location = new System.Drawing.Point(20, 120);
+            this.lblTest2.Text = "Test 2 Score:";
+            StyleConfig.ApplyLabelStyle(this.lblTest2);
+            this.txtTest2.Location = new System.Drawing.Point(140, 120);
             this.txtTest2.Size = new System.Drawing.Size(150, 23);
 
             // btnCalculate
-            this.btnCalculate.Location = new System.Drawing.Point(20, 120);
-            this.btnCalculate.Size = new System.Drawing.Size(100, 30);
-            this.btnCalculate.Text = "Calculate";
+            this.btnCalculate.Location = new System.Drawing.Point(20, 160);
+            this.btnCalculate.Size = new System.Drawing.Size(120, 40);
+            this.btnCalculate.Text = "Calculate Result";
+            StyleConfig.ApplyButtonStyle(this.btnCalculate);
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
 
             // lblAverage
-            this.lblAverage.Location = new System.Drawing.Point(130, 120);
-            this.lblAverage.Size = new System.Drawing.Size(150, 30);
+            this.lblAverage.Font = StyleConfig.HeaderFont;
+            this.lblAverage.ForeColor = StyleConfig.PrimaryBlue;
+            this.lblAverage.Location = new System.Drawing.Point(150, 160);
+            this.lblAverage.Size = new System.Drawing.Size(140, 40);
             this.lblAverage.Text = "Average: -";
             this.lblAverage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
             // lstPassedStudents
-            this.lblPassedHeader.Location = new System.Drawing.Point(300, 20);
-            this.lblPassedHeader.Text = "Passed Students:";
-            this.lstPassedStudents.Location = new System.Drawing.Point(300, 40);
-            this.lstPassedStudents.Size = new System.Drawing.Size(150, 110);
+            this.lblPassedHeader.Location = new System.Drawing.Point(320, 50);
+            this.lblPassedHeader.Text = "Passed Students Log:";
+            StyleConfig.ApplyLabelStyle(this.lblPassedHeader, true);
+            this.lstPassedStudents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstPassedStudents.Location = new System.Drawing.Point(320, 80);
+            this.lstPassedStudents.Size = new System.Drawing.Size(200, 160);
 
             // btnWhyException
-            this.btnWhyException.Location = new System.Drawing.Point(20, 170);
-            this.btnWhyException.Size = new System.Drawing.Size(200, 30);
-            this.btnWhyException.Text = "Why Exception Handling?";
+            this.btnWhyException.Location = new System.Drawing.Point(20, 250);
+            this.btnWhyException.Size = new System.Drawing.Size(250, 35);
+            this.btnWhyException.Text = "Importance of Exception Handling";
+            StyleConfig.ApplyButtonStyle(this.btnWhyException, false);
             this.btnWhyException.Click += new System.EventHandler(this.btnWhyException_Click);
 
             // QuestionDForm
-            this.ClientSize = new System.Drawing.Size(480, 220);
+            this.ClientSize = new System.Drawing.Size(550, 300);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblStudentName);
             this.Controls.Add(this.txtStudentName);
             this.Controls.Add(this.lblTest1);
@@ -82,7 +99,8 @@ namespace Assignment.Forms
             this.Controls.Add(this.lstPassedStudents);
             this.Controls.Add(this.btnWhyException);
             this.Name = "QuestionDForm";
-            this.Text = "Question D - Students & Exceptions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Question D - Student Grading";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -98,5 +116,6 @@ namespace Assignment.Forms
         private System.Windows.Forms.ListBox lstPassedStudents;
         private System.Windows.Forms.Label lblPassedHeader;
         private System.Windows.Forms.Button btnWhyException;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
