@@ -62,6 +62,12 @@ namespace Assignment.Forms
                     lvResults.Items.Add(item);
                 }
 
+                if (lvResults.Columns.Count >= 2)
+                {
+                    lvResults.Columns[0].Width = 90;
+                    lvResults.Columns[1].Width = -2;
+                }
+
                 MessageBox.Show("Done! File written and ListView updated.");
             }
             catch (Exception ex)

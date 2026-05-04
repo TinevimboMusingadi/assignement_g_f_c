@@ -34,11 +34,22 @@ When the application runs, you will see a main menu. Here is how to test each qu
 - Click **Run While Loop Test**. 
 - View the output in the text area to see how negatives are skipped and zero stops the loop.
 
-### Question C: SQL & LINQ
-- Click **"Question C - SQL/LINQ"**.
-- **Setup Required**: Ensure you have SQL Server installed and a database named `AssignmentDB` with a `Products` table (see the SQL script in the code comments).
-- Test Insert, Update, Delete, and the **LINQ** button to filter products > $100.
+### Question C: MySQL & LINQ
 
+**Course handout mapping (behaviour)** — Question C demonstrates:
+
+1. Database connection (handout uses SQL Server **`SqlClient`**; this solution uses **`MySqlConnector`** against **MySQL 8.x** instead).
+2. **`Products`** bound to a **`DataGridView`** (loads automatically when the form opens if the DB exists).
+3. **Parameterized INSERT / UPDATE / DELETE** with **`try`/`catch`** (`FormatException`, **`MySqlException`**).
+4. **LINQ** over a **`DataTable`** filled by **`SELECT *`** (`Price > 100`, **count**, **average**) — **`LINQ Analyze`** re-queries like the sample pattern.
+
+**Stack note:** markers who require **`System.Data.SqlClient`** verbatim should ask for that edition; behaviour here matches the handout aside from DB engine.
+
+- Click **"Question C - SQL/LINQ"**.
+- Question C uses NuGet **`MySqlConnector`** and MySQL (**127.0.0.1**, port **3306**, **`root`**). Ensure **`MySQL80`** is **running**.
+- **`Forms/QuestionCForm.cs`** — edit **`MySqlHost`** / **`MySqlPassword`** / **`MySqlDatabase`** if needed.
+- **First run**: **Setup DB** (creates **`assignmentdb`**, **`Products`**, seeds rows), then use **Refresh Data** if you prefer; the grid also loads on open after the DB exists.
+- **Or** run [`Scripts/SetupAssignmentDB_MySQL.sql`](Scripts/SetupAssignmentDB_MySQL.sql) in MySQL Workbench.
 ### Question D: Students & Exceptions
 - Click **"Question D - Student"**.
 - Enter a name and marks.
@@ -65,6 +76,6 @@ When the application runs, you will see a main menu. Here is how to test each qu
 - **IDE**: Visual Studio
 - **Language**: C#
 - **Framework**: .NET (Windows Forms)
-- **Database Library**: `System.Data.SqlClient`
+- **Database Library (Question C)**: `MySqlConnector` (MySQL 8.x)
 
 *Developed by Tinevimbo Musingadi and TEAM*

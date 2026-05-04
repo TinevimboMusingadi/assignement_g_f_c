@@ -1,3 +1,6 @@
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace Assignment.Forms
 {
     partial class QuestionAForm
@@ -30,6 +33,7 @@ namespace Assignment.Forms
             this.SuspendLayout();
 
             // lblInstructions
+            this.lblInstructions.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             this.lblInstructions.AutoSize = true;
             this.lblInstructions.Location = new System.Drawing.Point(20, 15);
             this.lblInstructions.Text = "Enter 8 integers below:";
@@ -39,34 +43,38 @@ namespace Assignment.Forms
             System.Windows.Forms.TextBox[] boxes = { txtNum1, txtNum2, txtNum3, txtNum4, txtNum5, txtNum6, txtNum7, txtNum8 };
             for (int i = 0; i < 8; i++)
             {
+                boxes[i].Anchor = AnchorStyles.Top | AnchorStyles.Left;
                 boxes[i].Location = new System.Drawing.Point(20, 50 + (i * 35));
                 boxes[i].Size = new System.Drawing.Size(120, 23);
                 this.Controls.Add(boxes[i]);
             }
 
             // btnProcess
-            this.btnProcess.Location = new System.Drawing.Point(160, 50);
-            this.btnProcess.Size = new System.Drawing.Size(120, 40);
+            this.btnProcess.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            this.btnProcess.Location = new System.Drawing.Point(165, 50);
+            this.btnProcess.Size = new System.Drawing.Size(140, 40);
             this.btnProcess.Text = "Process Data";
             StyleConfig.ApplyButtonStyle(this.btnProcess);
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
 
             // lblResult
+            this.lblResult.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(160, 105);
-            this.lblResult.Size = new System.Drawing.Size(150, 15);
+            this.lblResult.Location = new System.Drawing.Point(165, 100);
             this.lblResult.Text = "Results: Pending input...";
             StyleConfig.ApplyLabelStyle(this.lblResult);
 
             // lvResults
+            this.lvResults.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             this.lvResults.FullRowSelect = true;
             this.lvResults.GridLines = true;
-            this.lvResults.Location = new System.Drawing.Point(160, 130);
+            this.lvResults.Location = new System.Drawing.Point(165, 128);
             this.lvResults.Name = "lvResults";
-            this.lvResults.Size = new System.Drawing.Size(300, 200);
+            this.lvResults.Size = new System.Drawing.Size(315, 212);
 
             // QuestionAForm
-            this.ClientSize = new System.Drawing.Size(500, 360);
+            this.ClientSize = new System.Drawing.Size(504, 360);
+            this.MinimumSize = new System.Drawing.Size(420, 300);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.lblResult);
