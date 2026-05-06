@@ -25,6 +25,7 @@ namespace Assignment
             this.btnQuestionE = new System.Windows.Forms.Button();
             this.btnQuestionF = new System.Windows.Forms.Button();
             this.btnQuestionG = new System.Windows.Forms.Button();
+            this.btnSqlServer2022 = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
 
@@ -55,20 +56,20 @@ namespace Assignment
             this.pnlButtons.Size = new System.Drawing.Size(600, 320);
 
             // Buttons
-            System.Windows.Forms.Button[] buttons = { 
-                btnQuestionA, btnQuestionB, btnQuestionC, 
-                btnQuestionD, btnQuestionE, btnQuestionF, 
-                btnQuestionG 
+            System.Windows.Forms.Button[] buttons = {
+                btnQuestionA, btnQuestionB, btnQuestionC,
+                btnQuestionD, btnQuestionE, btnQuestionF,
+                btnQuestionG, btnSqlServer2022
             };
-            string[] texts = { 
-                "A) Arrays & Files", "B) Loops Test", "C) SQL & LINQ", 
-                "D) Student Scores", "E) Bank Account", "F) Power & Ref", 
-                "G) UI Controls" 
+            string[] texts = {
+                "A) Arrays & Files", "B) Loops Test", "C) SQL & LINQ",
+                "D) Student Scores", "E) Bank Account", "F) Power & Ref",
+                "G) UI Controls", "SQL Server 2022 demo"
             };
             System.EventHandler[] handlers = {
                 btnQuestionA_Click, btnQuestionB_Click, btnQuestionC_Click,
                 btnQuestionD_Click, btnQuestionE_Click, btnQuestionF_Click,
-                btnQuestionG_Click
+                btnQuestionG_Click, btnSqlServer2022_Click
             };
 
             for (int i = 0; i < buttons.Length; i++)
@@ -106,5 +107,6 @@ namespace Assignment
         private System.Windows.Forms.Button btnQuestionE;
         private System.Windows.Forms.Button btnQuestionF;
         private System.Windows.Forms.Button btnQuestionG;
+        private System.Windows.Forms.Button btnSqlServer2022;
     }
 }
